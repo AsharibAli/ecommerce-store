@@ -11,7 +11,7 @@ import { client } from "@/src/lib/sanityClient";
 import { useUser } from "@clerk/nextjs";
 import UserInfo from "@/components/userInfo";
 import Image from "next/image";
-
+import Product from "@/components/section/Product";
 //
 interface StoreData {
   id: number;

@@ -1,0 +1,359 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+ 
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 47.4% 11.2%;
+ 
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+ 
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 47.4% 11.2%;
+ 
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 47.4% 11.2%;
+ 
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+ 
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+ 
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+ 
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+ 
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 210 40% 98%;
+ 
+    --ring: 215 20.2% 65.1%;
+ 
+    --radius: 0.5rem;
+  }
+ 
+  .dark {
+    --background: 224 71% 4%;
+    --foreground: 213 31% 91%;
+ 
+    --muted: 223 47% 11%;
+    --muted-foreground: 215.4 16.3% 56.9%;
+ 
+    --popover: 224 71% 4%;
+    --popover-foreground: 215 20.2% 65.1%;
+ 
+    --card: 224 71% 4%;
+    --card-foreground: 213 31% 91%;
+ 
+    --border: 216 34% 17%;
+    --input: 216 34% 17%;
+ 
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 1.2%;
+ 
+    --secondary: 222.2 47.4% 11.2%;
+    --secondary-foreground: 210 40% 98%;
+ 
+    --accent: 216 34% 17%;
+    --accent-foreground: 210 40% 98%;
+ 
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+ 
+    --ring: 216 34% 17%;
+ 
+    --radius: 0.5rem;
+  }
+}
+ 
+@layer base {
+  * {
+    @apply border-border max-w-none w-auto p-0 m-0 box-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans overflow-x-hidden ;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+@layer components {
+  .dropDown_box {
+    @apply shadow-lg shadow-[#0f172a] z-30 bg-gray-100 transition ease-in-out delay-100 duration-300 border-[0.5px] divide-y-2  w-full p-4 items-start rounded-lg absolute top-12 
+  }
+  .header {
+    @apply relative flex justify-between gap-[4rem];
+  }
+  .header-left-side , .header-right-side {
+    @apply flex flex-1;
+  }
+  .header-left-side {
+    @apply flex flex-col pt-12 pb-4 justify-between
+  }
+  .header-content {
+    @apply flex flex-col justify-center gap-10
+  }
+  .header-content span {
+     @apply bg-[#e1edff] h-[40px] w-[120px] font-semibold justify-center items-center rounded-[6px] flex justify-items-center text-[#0000FF] ;
+  }
+  .header-content h1 {
+    @apply scroll-m-20 text-[#212121] font-bold text-4xl lg:text-5xl leading-[55px] tracking-tighter
+  }
+  .header-content p {
+    @apply font-normal text-[1rem] leading-6  text-[#666666] w-[70%]
+  }
+  .header-content .btn {
+    @apply p-4 text-base  ;
+  }
+  .header-featured {
+    @apply grid grid-cols-2 gap-4  md:grid-cols-3 lg:grid-cols-4;
+  }
+  .header-circle {
+    @apply w-[600px] h-[600px] rounded-full bg-[#ffece3]
+  }
+  .header-circle .header-img {
+    @apply absolute top-[-5%]
+  }
+  /*-------------------- EVENTS SECTION ------------------*/
+  /* .event-container {
+    @apply ;
+  } */
+  .subtitle {
+    @apply text-center flex flex-col gap-4 mt-[2rem]
+  }
+  .subtitle span {
+    @apply font-bold text-[12px] leading-4 text-center text-[#0062f5] tracking-widest
+  }
+  .subtitle h2 {
+    @apply font-bold text-[32px] leading-10 text-center tracking-wide
+  }
+  /* .event-card:first-child {
+    @apply bg-[#d6d6d8] flex justify-between items-center px-8 tracking-wider text-[#212121]
+  } */
+  /* .event-card:first-child img {
+    @apply w-[260px] h-[200px]
+  } */
+  /* .event-card:last-child {
+    @apply bg-[#212121] text-white flex flex-col justify-center items-center py-12 px-8 pb-8
+  } */
+  /* child items like h3,p,span of .event-card:last-child*/
+  /* .event-card:last-child h3 {
+    @apply font-extrabold text-4xl leading-9 mb-4
+  }
+  .event-card:last-child p {
+    @apply font-normal text-sm tracking-wide
+  }
+  .event-card:last-child button {
+    @apply font-bold text-sm  tracking-[0.25rem] text-white border-none bg-[#474747] py-2 px-10 mt-[5px] rounded-[8px]
+  } */
+  
+  /* 2nd and 3rd image of event promotion */
+  .event-banner-right {
+    @apply pt-6 flex flex-wrap justify-between items-center gap-4 sm:flex-col;
+    /* @apply flex flex-1 justify-between items-center gap-4; */
+  }
+  .event-banner-right-1, .event-banner-right-2 {
+    @apply pt-6 flex flex-wrap justify-between sm:flex-col
+    /* @apply pt-[1.5rem] flex md:flex-col flex-row flex-wrap justify-between items-center; */
+  }
+  .event-banner-right-1 {
+    @apply bg-[#efe1c7]
+  }
+  .event-banner-right-2 {
+    @apply bg-[#d7d7d9]
+  }
+  .event-banner-right-1 img, .event-banner-right-2 img {
+    @apply w-[280px] h-[340px] pt-4;
+  }
+  .details {
+    @apply w-full ml-10;
+  }
+  .details p {
+    @apply font-normal text-base tracking-wider
+  }
+  .details span:first-child {
+    @apply relative line-through
+  }
+  .details span:first-child::after {
+    @apply w-full h-[1px] bg-[#212121] absolute bottom-3 left-0
+  }
+  .details span:last-child {
+    @apply font-semibold text-lg ml-2.5
+  }
+  /* all product design */
+  /* .Allproducts-container {
+    @apply 
+    /* pt-[20px]  w-full  h-auto flex flex-col md:flex-row */
+  /* } */ 
+  .product-card {
+    @apply py-8 text-center  transform scale-100 transition-transform duration-500 ease-in-out;
+  }
+  .product-card:hover {
+    @apply transform scale-110;
+  }
+  .product-name, .product-price {
+    @apply font-semibold text-[#212121] mt-2 leading-6;
+  }
+  .product-name {
+    @apply text-lg tracking-tight;
+  }
+  .product-price {
+    @apply text-xl;
+  }
+  /* feature section here */
+  .feature-container .title {
+    @apply flex  justify-end px-8 py-2  bg-gradient-to-b from-white to-[#FBFCFF]
+  }
+  .feature-container .title h1 {
+    @apply  md:w-[50%] w-[100%] sm:w-[80%] text-[#212121] font-extrabold text-xl md:text-4xl lg:text-5xl md:leading-tight leading-tight md:justify-end tracking-wider
+  }
+  .feature-container > .content {
+    @apply grid grid-cols-1 w-full md:grid-cols-2 bg-[#FBFCFF]
+  }
+  .feature-container > .content > .left-side {
+    @apply grid grid-cols-2 justify-center items-center relative
+  }
+  .feature-container > .content > .left-side > .feature-watermark {
+    @apply font-extrabold text-7xl md:text-[6.875rem] leading-[110px] absolute text-primary opacity-10 z-[1]
+  }
+  .feature-container > .content > .left-side div {
+    @apply w-full md:w-[70%]  z-[2] justify-between
+  }
+  .feature-container > .content > .left-side h3 {
+    @apply font-semibold text-lg leading-5 tracking-wide text-primary mb-4
+  }
+  .feature-container > .content > .left-side p {
+    @apply font-light text-base leading-6 tracking-wider text-primary
+  }
+  /* right side */
+  .feature-container > .content > .right-side {
+    @apply flex flex-col md:flex-row px-2 justify-center items-center gap-10 ;
+  }
+  .feature-container > .content > .right-side div {
+    @apply flex flex-col gap-8 
+  }
+  .feature-container > .content > .right-side p {
+    @apply font-light text-base tracking-wider leading-7 text-justify  text-primary
+  }
+  /* newaletter background as watermark */
+  .newsletter > .newsletter-watermark {
+    @apply font-extrabold text-4xl md:text-6xl lg:text-9xl text-watermark leading-[151px] absolute z-[-1] 
+  }
+  /* .newsletter > input {
+    @apply 
+  } */
+  .footer {
+    @apply grid grid-cols-1 md:grid-cols-2 gap-4 justify-items-start lg:justify-items-center lg:grid-cols-4 px-8 py-16 space-y-2  lg:space-y-4
+  }
+  .footer > .logo {
+    @apply flex flex-col sm:gap-0 gap-4 justify-between w-full  lg:w-[80%] 
+  }
+  .icon-container {
+    @apply flex gap-4 
+  }
+  .icon-container > div {
+    @apply bg-[#f1f1f1] hover:bg-gray-400 hover:text-blue-500 cursor-pointer py-2.5 px-3 rounded-[10px]
+  } 
+  footer li {
+    @apply mt-6 hover:cursor-pointer hover:text-blue-400 touch-auto ;
+  }
+  footer p , footer  li {
+    @apply leading-6 font-normal text-base text-[#666666]
+  }
+  .footer-links h3 {
+    @apply font-bold text-[1.2rem] leading-[19px] tracking-wide text-[#666666]
+  }
+  .copyright {
+    @apply mt-24 border-t-[1px] border-[#666666] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-center mx-auto text-center
+  }
+  .copyright p {
+    @apply my-6
+  }
+  .copyright span {
+    @apply font-bold text-base leading-4 text-primary
+  }
+  /* product cart for all products */
+  .Allproduct-card {
+    @apply w-[250px] mx-auto
+  }
+  .Allproduct-card Image {
+    @apply w-[100%] h-[100%]
+  }
+  .Allproduct-name, .Allproduct-price {
+    @apply font-semibold leading-6 tracking-wide text-primary
+  }
+  .Allproduct-name {
+    @apply text-lg mt-2
+  }
+  .Allproduct-tag {
+    @apply font-semibold text-base leading-4 text-[#888888] mt-2
+  }
+  .Allproduct-price {
+    @apply text-xl mt-4
+  }
+
+  /* product card details */
+  .products {
+    @apply bg-[#FCFCFC]
+  }
+  
+  .product-images {
+    @apply flex flex-1 gap-8
+  }
+  .size li {
+    @apply w-[40px] h-[40px] flex justify-center items-center rounded-full cursor-pointer text-[1rem] text-gray-600
+  }
+  .size li:hover {
+    @apply hover:shadow-md hover:bg-white  hover:text-primary hover:ease-in-out hover:transition delay-100 duration-200 shadow-primary hover:text-black hover:border-sky-200
+  } 
+  .btn2 {
+    @apply font-bold  bg-sky-200 hover:bg-sky-50 items-center hover:border-[1px] border-[1px] hover:border-[#000000] border-[#f1f1f1] cursor-pointer rounded-[50%] flex shrink-0 py-[5px] px-[10px] 
+  }
+  .btn3 {
+    @apply font-bold  bg-black hover:bg-sky-200 items-center hover:border-[1px] border-[1px] hover:text-black text-white hover:border-black border-white/90 cursor-pointer rounded-[50%] flex shrink-0 py-[5px] px-[10px] 
+  }
+  /* product details page */
+  .product-desc-container {
+    @apply bg-white flex flex-col mt-16 gap-8 p-12
+  }
+  .desc-title {
+    @apply border-b-[2px] border-[#c4c4c4] relative w-full h-[150px]
+  }
+  .desc-title h1 {
+    @apply font-bold text-2xl leading-6 tracking-wide text-primary pb-12 z-[2] top-[45%] absolute
+  }
+  .desc-background {
+    @apply font-extrabold text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl text-[#f2f3f7] opacity-70 z-[-1] h-full w-full
+  }
+  /* desc and care details */
+  .hbtn:hover {
+    @apply   transition-all duration-500 bg-gradient-to-br to-white via-black from-red-500  hover:bg-right-bottom 
+  }
+   /* fireWorks */
+   .success-wrapper, .cancel-wrapper {
+    @apply bg-white min-h-screen w-auto p-8 m-auto
+   }
+   .success , .cancel {
+    @apply w-auto m-auto h-screen  bg-[#dcdcdc] p-[50px] border rounded-[15px] flex justify-center items-center flex-col
+   }
+   .success .icon {
+    @apply text-green-500 font-semibold
+   }
+   .success h2 {
+    @apply uppercase my-[15px] font-extrabold text-xl sm:text-2xl  md:text-3xl lg:text-4xl text-[#324d67]
+   }
+   .success .email-msg {
+    @apply  my-4 md:text-lg font-semibold text-center
+   }
+   .label_input {
+    @apply text-form font-medium block mt-4;
+  }
+  .input_section {
+    @apply ring-[0.3px] ring-fuchsia-50 bg-gradient-to-r from-[#514756] via-[#473B4C] to-[#382C3E] w-full p-2 pl-10  placeholder-form rounded-md focus:outline-none focus:ring-2 focus:ring-blue-300
+  }
+  .error_msg {
+    @apply text-sm text-red-500 pl-2 pt-2;
+  }
+}

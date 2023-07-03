@@ -7,6 +7,7 @@ import { formatPrice } from "@/src/lib/helper";
 import { useStateContext } from "@/src/context/cartContext";
 import { toast } from "react-toastify";
 import { useUser } from "@clerk/nextjs";
+import Image from "next/image";
 
 const DetailCard = ({ data }: { data: IProduct[] }) => {
   const [index, setIndex] = useState(0);
@@ -45,7 +46,7 @@ const DetailCard = ({ data }: { data: IProduct[] }) => {
 
               <div className="flex flex-wrap md:flex-col items-center mx-auto justify-center md:justify-start gap-y-4 gap-x-[2px] lg:gap-x-1 lg:gap-2 ">
                 {item.images.map((img, ind) => (
-                  <img
+                  <Image
                     key={ind}
                     src={urlFor(img).url()}
                     onMouseEnter={() => setIndex(ind)}
@@ -57,7 +58,7 @@ const DetailCard = ({ data }: { data: IProduct[] }) => {
 
               {/* middle big image */}
               <div className="w-full md:w-[40%] h-[60%]">
-                <img
+                <Image
                   src={urlFor(item.images && item.images[index]).url()}
                   alt={item.name}
                   className="h-[100%] w-[100%]"

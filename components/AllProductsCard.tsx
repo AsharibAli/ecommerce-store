@@ -17,9 +17,8 @@ const AllProductsCard = ({ data }: { data: IProduct[] }) => {
   const { search } = useContext(SearchContext);
 
   const [sortedProducts, setSortedProducts] = useState(data);
-  const [selectedValue , setSelectedValue] = useState('');
+  const [selectedValue, setSelectedValue] = useState("");
 
-  
   useEffect(() => {
     const tempArray = [...data];
     if (selectedValue === "low") {
@@ -28,18 +27,17 @@ const AllProductsCard = ({ data }: { data: IProduct[] }) => {
       tempArray.sort((product1, product2) => product2.price - product1.price);
     }
     setSortedProducts(tempArray);
-  }, [selectedValue]);
+  }, [data, selectedValue]);
 
   const filteredData = sortedProducts.filter((product) => {
-
     const fData =
       product.name.toLowerCase().includes(search.value.toLowerCase()) ||
       product.tag.tag.toLowerCase().includes(search.value.toLowerCase()) ||
-      product.usecase.category.toLowerCase().includes(search.value.toLowerCase());
+      product.usecase.category
+        .toLowerCase()
+        .includes(search.value.toLowerCase());
     return fData;
   });
-  
-  
 
   return (
     <div className="max-w-screen-lg justify-between py-2 my-16 mx-auto">
@@ -97,4 +95,3 @@ const AllProductsCard = ({ data }: { data: IProduct[] }) => {
 };
 
 export default AllProductsCard;
-

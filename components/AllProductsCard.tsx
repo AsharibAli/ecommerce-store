@@ -8,6 +8,7 @@ import { useRouter, usePathname } from "next/navigation";
 import { formatPrice } from "@/src/lib/helper";
 import { SearchContext } from "@/src/context/searchContext";
 import { ToastContainer, toast } from "react-toastify";
+import Link from "next/link";
 
 const AllProductsCard = ({ data }: { data: IProduct[] }) => {
   const currentPath = usePathname();
@@ -62,12 +63,14 @@ const AllProductsCard = ({ data }: { data: IProduct[] }) => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-between items-center gap-2">
           {filteredData &&
             filteredData.map((item) => (
-              <div
+              <Link
+                href={`${currentPath}/${item.slug.current}`}
                 className="Allproduct-card cursor-pointer"
                 key={item._id}
-                onClick={() =>
-                  router.push(`${currentPath}/${item.slug.current}`)
-                }
+
+                // onClick={() =>
+                //   router.push(`${currentPath}/${item.slug.current}`)
+                // }
               >
                 {/* <Image src={urlFor(item.images[0]).url()} className="" loading="lazy" alt={item._id} height={270} width={250} /> */}
                 <div className="group flex justify-center text-center relative overflow-hidden cursor-pointer">
@@ -86,7 +89,7 @@ const AllProductsCard = ({ data }: { data: IProduct[] }) => {
                 <h3 className="Allproduct-price">
                   {formatPrice(item.price, "PKR")}
                 </h3>
-              </div>
+              </Link>
             ))}
         </div>
       </Suspense>

@@ -51,6 +51,8 @@ const DetailCard = ({ data }: { data: IProduct[] }) => {
                     src={urlFor(img).url()}
                     onMouseEnter={() => setIndex(ind)}
                     alt="product image"
+                    width={500}
+                    height={500}
                     className="object-cover  h-[100px] w-[100px] "
                   />
                 ))}
@@ -61,6 +63,8 @@ const DetailCard = ({ data }: { data: IProduct[] }) => {
                 <Image
                   src={urlFor(item.images && item.images[index]).url()}
                   alt={item.name}
+                  width={500}
+                  height={500}
                   className="h-[100%] w-[100%]"
                 />
               </div>

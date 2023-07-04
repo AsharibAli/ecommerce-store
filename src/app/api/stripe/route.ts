@@ -45,8 +45,8 @@ export const POST = async (request : NextRequest) => {
             }
         }),
         shipping_options: [
-            { shipping_rate: 'shr_1NGIzTG5RgPLOWzHnwK7PKY2' },
-            { shipping_rate: 'shr_1NGJ5SG5RgPLOWzHYicMzPMG' }
+            { shipping_rate: 'shr_1NQ8jAJ4Lw2nE9ClQlhZJsRL' },
+            { shipping_rate: 'shr_1NQ8nJJ4Lw2nE9Cl3WxRMBi3' }
         ],
         
        } as any;

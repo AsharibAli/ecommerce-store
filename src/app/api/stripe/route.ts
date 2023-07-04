@@ -22,8 +22,8 @@ export const POST = async (request : NextRequest) => {
         mode : 'payment',
         payment_method_types : ['card'],
         billing_address_collection : "auto",
-        success_url : `${process.env.URL}/success`,
-        cancel_url : `${process.env.URL}/`,
+        success_url : `https://new-ecom-hack.vercel.app/success`,
+        cancel_url : `https://new-ecom-hack.vercel.app`,
         line_items :     cartItems?.map((item : any) => {
             const img = item.images[0].asset._ref;
             const newImage = img.replace('image-', 'https://cdn.sanity.io/images/zvdeaneb/production/').replace('-png', '.png');

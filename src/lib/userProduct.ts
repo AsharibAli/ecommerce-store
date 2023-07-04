@@ -1,7 +1,7 @@
 import { client } from "./sanityClient";
 
 async function vercelProduct() {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/products/api/cart`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/cart`, {
       cache: "no-store",
     });
     try {

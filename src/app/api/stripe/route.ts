@@ -38,7 +38,7 @@ export const POST = async (request : NextRequest) => {
 
             return {
               price_data: { 
-                currency: 'pkr',
+                currency: 'usd',
                 product_data: { 
                   name:item.name,
                   images: [newImage],

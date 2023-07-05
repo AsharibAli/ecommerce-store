@@ -26,11 +26,11 @@ export const POST = async (request : NextRequest) => {
         cancel_url : `https://new-ecom-hack.vercel.app`,
         line_items :     cartItems?.map((item : any) => {
             const img = item.images[0].asset._ref;
-            const newImage = img.replace('image-', 'https://cdn.sanity.io/images/zvdeaneb/production/').replace('-png', '.png');
+            const newImage = img.replace('image-', 'https://cdn.sanity.io/images/zvdeaneb/production/').replace('-png', '.png', '.webp', '.jpg', '.jpeg');
     
             return {
               price_data: { 
-                currency: 'usd',
+                currency: 'pkr',
                 product_data: { 
                   name:item.name,
                   images: [newImage],

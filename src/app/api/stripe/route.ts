@@ -25,9 +25,17 @@ export const POST = async (request : NextRequest) => {
         success_url : `https://new-ecom-hack.vercel.app/success`,
         cancel_url : `https://new-ecom-hack.vercel.app`,
         line_items :     cartItems?.map((item : any) => {
-            const img = item.images[0].asset._ref;
-            const newImage = img.replace('image-', 'https://cdn.sanity.io/images/zvdeaneb/production/').replace('-png', '.png', '.webp', '.jpg', '.jpeg');
+            // const img = item.images[0].asset._ref;
+            // const newImage = img.replace('image-', 'https://cdn.sanity.io/images/zvdeaneb/production/').replace('-png', '.png', '.webp', '.jpg', '.jpeg');
     
+            const img = item.images[0].asset._ref;
+            const baseURL = img.replace('image-', 'https://cdn.sanity.io/images/zvdeaneb/production/');
+            let newImage = baseURL.replace('-png', '.png');
+            newImage = newImage.replace('-webp', '.webp');
+            newImage = newImage.replace('-jpg', '.jpg');
+            newImage = newImage.replace('-jpeg', '.jpeg');
+            
+
             return {
               price_data: { 
                 currency: 'pkr',

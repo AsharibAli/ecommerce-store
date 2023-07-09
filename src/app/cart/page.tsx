@@ -199,7 +199,7 @@ const Cart = async () => {
             ))}
         </div>
         {cartItems.length >= 1 && (
-          <div className="mt-2 md:w-[40%] w-full border-[1px] max-h-[360px] bg-white/60 border-yellow shadow-sm shadow-primary p-4 flex-grow space-y-6 mx-auto text-center text-black max-w-full lg:max-w-sm  ">
+          <div className="mt-2 md:w-[40%] w-full border-[1px] max-h-[360px] bg-white/60 border-black shadow-sm shadow-primary p-4 flex-grow space-y-6 mx-auto text-center text-black max-w-full lg:max-w-sm  ">
             <h1 className="py-6 text-2xl font-bold text-black">
               Order Details
             </h1>

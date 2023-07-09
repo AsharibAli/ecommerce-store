@@ -1,5 +1,5 @@
 "use client";
-import { Search, ShoppingCart } from "lucide-react";
+import { Search, ShoppingCart, ShoppingBag } from "lucide-react";
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -15,7 +15,7 @@ import { useState, useContext } from "react";
 import { SearchContext } from "@/src/context/searchContext";
 import { useStateContext } from "@/src/context/cartContext";
 import Link from "next/link";
-import { CiLogin } from "react-icons/ci";
+import { CiSignpostDuo1 } from "react-icons/ci";
 
 const manuLi = [
   {
@@ -78,13 +78,13 @@ const Navbar = () => {
         <input
           onChange={(e) => setSearch({ value: e.target.value })}
           type="text"
-          placeholder="What you are looking for"
+          placeholder="Search...."
           className="rounded-r border-none p-[5px] w-full text-sm "
         />
       </div>
       <div className="flex  items-center justify-center hover:ease-in-out ">
         <Link href={"/sign-in"}>
-          <CiLogin className="h-8 w-8 hover:animate-bounce md:flex hidden " />
+          <CiSignpostDuo1 className="h-8 w-8 hover:animate-bounce md:flex hidden " />
         </Link>
       </div>
       {showCart ? (
@@ -96,7 +96,7 @@ const Navbar = () => {
           <span className="absolute top-1 right-1 transform translate-x-2 -translate-y-2 h-6 w-6 text-center rounded-full bg-red-500 text-white">
             {totalQty}
           </span>
-          <ShoppingCart className="" />
+          {<ShoppingBag className="" />}
         </Link>
       ) : (
         <div
@@ -106,7 +106,7 @@ const Navbar = () => {
           <span className="absolute top-1 right-1 transform translate-x-2 -translate-y-2 h-6 w-6 text-center rounded-full bg-red-500 text-white">
             {totalQty}
           </span>
-          <ShoppingCart className="" />
+          <ShoppingBag className="" />
         </div>
       )}
 
@@ -142,11 +142,11 @@ const Navbar = () => {
                 <span className="absolute top-1 right-1 transform translate-x-2 -translate-y-2 h-6 w-6 text-center rounded-full bg-red-500 text-white">
                   {totalQty}
                 </span>
-                <ShoppingCart className="" onClick={handleClick} />
+                <ShoppingBag className="" onClick={handleClick} />
               </Link>
               <div className="flex  items-center justify-center hover:ease-in-out ">
                 <Link href={"/sign-in"} onClick={handleClick}>
-                  <CiLogin className="h-8 w-8 hover:animate-bounce " />
+                  <CiSignpostDuo1 className="h-8 w-8 hover:animate-bounce " />
                 </Link>
               </div>
             </ul>

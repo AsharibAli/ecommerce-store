@@ -33,7 +33,7 @@ const Success: NextPage = () => {
           </a>
         </p>
         <Link href="/">
-          <Button type="button" className="hbtn mt-4">
+          <Button className="h-full w-full rounded-lg bg-gradient-to-r from-purple-600 via-pink-500 to-red-500 px-4 py-2 text-white">
             Continue Shopping
           </Button>
         </Link>

@@ -151,7 +151,7 @@ const DetailCard = ({ data }: { data: IProduct[] }) => {
                         onAdd(item, qty);
                       }
                     }}
-                    className="hbtn rounded-xl text-base lg:text-lg  font-normal gap-1 m-2 p-6 text-white"
+                    className="h-full w-full rounded-lg bg-gradient-to-r from-purple-600 via-pink-500 to-red-500 px-4 py-2 text-white"
                   >
                     <CgShoppingCart size={20} /> Add to card
                   </Button>

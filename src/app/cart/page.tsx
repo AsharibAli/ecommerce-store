@@ -166,11 +166,11 @@ const Cart = async () => {
                   </h2>
                   {/* delivery estiumation */}
                   <p className=" text-primary font-semibold text-xl ">
-                    Delivery Estimation
+                    Total Delivery Estimation
                   </p>
                   {/* item delivery time */}
-                  <p className=" text-yellow font-semibold text-xl ">
-                    5 Working Days
+                  <p className=" text-black font-semibold text-xl ">
+                    5-7 Business Days
                   </p>
                   {/* item price */}
                   <div className="flex justify-items-center  ">
@@ -204,20 +204,20 @@ const Cart = async () => {
               Order Details
             </h1>
             <div className="text-sm  space-y-6  divide-yellow-500 text-black">
-              <div className=" border-b-[1px] pb-1 border-b-orange flex px-2 justify-between m-2  ">
-                <p className="text-sm"> All price </p>
+              <div className=" border-b-[1px] pb-1 border-b-purple flex px-2 justify-between m-2  ">
+                <p className="text-sm"> All Products price </p>
                 <h3> {formatPrice(totalPrice, "PKR")} </h3>
               </div>
-              <div className=" border-b-[1px] pb-1 border-b-orange flex px-2 justify-between m-2  ">
+              <div className=" border-b-[1px] pb-1 border-b-purple flex px-2 justify-between m-2  ">
                 <p className="text-sm"> Total Products </p>
                 <h3> {totalQty} </h3>
               </div>
-              <div className=" border-b-[1px] pb-1 border-b-orange flex px-2 justify-between m-2  ">
-                <p>Tax</p>
+              <div className=" border-b-[1px] pb-1 border-b-purple flex px-2 justify-between m-2  ">
+                <p>Service Fee</p>
                 <h3>{formatPrice(0, "PKR")}</h3>
               </div>
-              <div className=" border-b-[1px] pb-1 border-b-orange flex px-2 justify-between m-2  ">
-                <p>Total</p>
+              <div className=" border-b-[1px] pb-1 border-b-purple flex px-2 justify-between m-2  ">
+                <p>Total Amount</p>
                 <h3> {formatPrice(totalPrice, "PKR")} </h3>
               </div>
             </div>
@@ -228,9 +228,9 @@ const Cart = async () => {
                   handlePayNow();
                   handleDeleteNow();
                 }}
-                className="hbtn mx-auto justify-end px-5 py-[2px] rounded-[4px] w-full bg-primary  "
+                className="h-full w-full rounded-lg bg-gradient-to-r from-purple-600 via-pink-500 to-red-500 px-4 py-2 text-white"
               >
-                PROCEED TO CHECKOUT
+                CONTINUE TO CHECKOUT
               </button>
             </div>
           </div>

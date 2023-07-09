@@ -25,33 +25,33 @@ export const POST = async (request : NextRequest) => {
         success_url : `https://new-ecom-hack.vercel.app/success`,
         cancel_url : `https://new-ecom-hack.vercel.app`,
         line_items :     cartItems?.map((item : any) => {
-            // const img = item.images[0].asset._ref;
-            // const newImage = img.replace('image-', 'https://cdn.sanity.io/images/zvdeaneb/production/').replace('-png', '.png', '.webp', '.jpg', '.jpeg');
-    
-            const img = item.images[0].asset._ref;
-            const baseURL = img.replace('image-', 'https://cdn.sanity.io/images/zvdeaneb/production/');
-            let newImage = baseURL.replace('-png', '.png');
-            newImage = newImage.replace('-webp', '.webp');
-            newImage = newImage.replace('-jpg', '.jpg');
-            newImage = newImage.replace('-jpeg', '.jpeg');
-            
+          // const img = item.images[0].asset._ref;
+          // const newImage = img.replace('image-', 'https://cdn.sanity.io/images/zvdeaneb/production/').replace('-png', '.png', '.webp', '.jpg', '.jpeg');
+  
+          const img = item.images[0].asset._ref;
+          const baseURL = img.replace('image-', 'https://cdn.sanity.io/images/zvdeaneb/production/');
+          let newImage = baseURL.replace('-png', '.png');
+          newImage = newImage.replace('-webp', '.webp');
+          newImage = newImage.replace('-jpg', '.jpg');
+          newImage = newImage.replace('-jpeg', '.jpeg');
+          
 
-            return {
-              price_data: { 
-                currency: 'usd',
-                product_data: { 
-                  name:item.name,
-                  images: [newImage],
-                },
-                unit_amount:   item.price * 100,
+          return {
+            price_data: { 
+              currency: 'usd',
+              product_data: { 
+                name:item.name,
+                images: [newImage],
               },
-              adjustable_quantity: {
-                enabled:true,
-                minimum: 1,
-              },
-              quantity: item.quantity
-            }
-        }),
+              unit_amount:   item.price * 100,
+            },
+            adjustable_quantity: {
+              enabled:true,
+              minimum: 1,
+            },
+            quantity: item.quantity
+          }
+      }),
         shipping_options: [
             { shipping_rate: 'shr_1NQ8jAJ4Lw2nE9ClQlhZJsRL' },
             { shipping_rate: 'shr_1NQ8nJJ4Lw2nE9Cl3WxRMBi3' }

@@ -204,19 +204,19 @@ const Cart = async () => {
               Order Details
             </h1>
             <div className="text-sm  space-y-6  divide-yellow-500 text-black">
-              <div className=" border-b-[1px] pb-1 border-b-purple flex px-2 justify-between m-2  ">
+              <div className=" border-b-[1px] pb-1 border-b-black flex px-2 justify-between m-2  ">
                 <p className="text-sm"> All Products price </p>
                 <h3> {formatPrice(totalPrice, "PKR")} </h3>
               </div>
-              <div className=" border-b-[1px] pb-1 border-b-purple flex px-2 justify-between m-2  ">
+              <div className=" border-b-[1px] pb-1 border-b-black flex px-2 justify-between m-2  ">
                 <p className="text-sm"> Total Products </p>
                 <h3> {totalQty} </h3>
               </div>
-              <div className=" border-b-[1px] pb-1 border-b-purple flex px-2 justify-between m-2  ">
+              <div className=" border-b-[1px] pb-1 border-b-black flex px-2 justify-between m-2  ">
                 <p>Service Fee</p>
                 <h3>{formatPrice(0, "PKR")}</h3>
               </div>
-              <div className=" border-b-[1px] pb-1 border-b-purple flex px-2 justify-between m-2  ">
+              <div className=" border-b-[1px] pb-1 border-b-black flex px-2 justify-between m-2  ">
                 <p>Total Amount</p>
                 <h3> {formatPrice(totalPrice, "PKR")} </h3>
               </div>

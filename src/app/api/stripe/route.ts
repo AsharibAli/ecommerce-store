@@ -26,7 +26,7 @@ export const POST = async (request : NextRequest) => {
         cancel_url : `https://new-ecom-hack.vercel.app`,
                line_items :     cartItems?.map((item : any) => {  
           const img = item.images[0].asset._ref;
-          const baseURL = img.replace('image-', 'https://cdn.sanity.io/images/zvdeaneb/production/', innerWidth);
+          const baseURL = img.replace('image-', 'https://cdn.sanity.io/images/zvdeaneb/production/');
           let newImage = baseURL.replace('-png', '.png');
           newImage = newImage.replace('-webp', '.webp');
           newImage = newImage.replace('-jpg', '.jpg');

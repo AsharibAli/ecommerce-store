@@ -72,30 +72,30 @@ const Cart = async () => {
     }
   };
 
-  const handleDeleteNow = async () => {
-    try {
-      const del = await fetch(`/api/cart`, {
-        method: "DELETE",
-      });
-      if (del.ok) {
-        toast.loading("Deleting... from cart");
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
-  const handleDeleteItem = async (_id: string) => {
-    try {
-      const del = await fetch(`/api/cart${_id}`, {
-        method: "DELETE",
-      });
-      if (!del.ok) {
-        toast.error("Failed ot delete from database");
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  // const handleDeleteNow = async () => {
+  //   try {
+  //     const del = await fetch(`/api/cart`, {
+  //       method: "DELETE",
+  //     });
+  //     if (del.ok) {
+  //       toast.loading("Deleting... from cart");
+  //     }
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
+  // const handleDeleteItem = async (_id: string) => {
+  //   try {
+  //     const del = await fetch(`/api/cart${_id}`, {
+  //       method: "DELETE",
+  //     });
+  //     if (!del.ok) {
+  //       toast.error("Failed ot delete from database");
+  //     }
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
 
   return (
     <div className="  md:p-12 justify-center items-center mx-auto ">
@@ -153,7 +153,7 @@ const Cart = async () => {
                           );
                         } else {
                           onRemove(item);
-                          handleDeleteItem(item._id);
+                          // handleDeleteItem(item._id);
                         }
                       }}
                     >
@@ -226,7 +226,7 @@ const Cart = async () => {
                 type="button"
                 onClick={() => {
                   handlePayNow();
-                  handleDeleteNow();
+                  // handleDeleteNow();
                 }}
                 className="h-full w-full rounded-lg bg-gradient-to-r from-purple-600 via-pink-500 to-red-500 px-4 py-2 text-white"
               >
